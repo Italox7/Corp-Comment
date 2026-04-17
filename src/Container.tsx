@@ -1,3 +1,3 @@
 export default function Container() {
-  return <div>Container</div>;
+  return <main className="container">Container</main>;
 }
