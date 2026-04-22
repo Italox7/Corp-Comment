@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <small>
         <p>
           &copy; Copyright by{" "}
           <a target="_blank" href="https://github.com/Italox7">
-            Italo
+            Italo.com
           </a>{" "}
           . Intended for learning or your portfolio.
         </p>
