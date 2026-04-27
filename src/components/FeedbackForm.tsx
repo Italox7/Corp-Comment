@@ -1,21 +1,32 @@
 import { useState } from "react";
 import { MAX_CHARACTERS } from "../lib/constants";
 
-export default function FeedbackForm() {
-  const [feedbackText, setFeedbackText] = useState("");
+type FeedbackFormProps = {
+  onAddToList: (text: string) => void;
+};
 
+export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
+  const [feedbackText, setFeedbackText] = useState("");
   const charCount = MAX_CHARACTERS - feedbackText.length;
 
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFeedbackText(event.target.value);
+  };
+
+  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    onAddToList(feedbackText);
+    setFeedbackText("");
+  };
+
   return (
-    <form className="form">
+    <form onSubmit={handleSubmit} className="form">
       <textarea
         id="feedback-textarea"
         placeholder="text"
         spellCheck={false}
         value={feedbackText}
-        onChange={(e) => {
-          setFeedbackText(e.target.value);
-        }}
+        onChange={handleChange}
         maxLength={MAX_CHARACTERS}
       />
 
@@ -25,6 +36,7 @@ export default function FeedbackForm() {
 
       <div>
         <p className="u-italic">{charCount}</p>
+
         <button
           onClick={() => {
             console.log("ai meu deus!!");
