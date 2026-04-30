@@ -1,7 +1,7 @@
 import FeedabackItem from "./FeedabackItem";
-import Spinner from "./Spinner";
-import ErrorMessage from "./ErrorMessage";
-import type { TFeedbackItem } from "../lib/types";
+import Spinner from "../Spinner";
+import ErrorMessage from "../ErrorMessage";
+import type { TFeedbackItem } from "../../lib/types";
 
 type FeedbackListProps = {
   isLoading: boolean;
