@@ -10,6 +10,7 @@ export default function FeedabackItem({ feedbackItem }: FeedbackItemsProps) {
 
   const handleUpvote = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setCountVote((prev) => ++prev);
+    e.currentTarget.disabled = true;
     e.stopPropagation();
   };
 
