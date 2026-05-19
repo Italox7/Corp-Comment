@@ -48,4 +48,4 @@ Esta aplicação exibe itens de feedback com categorias e hashtags, permitindo v
 - `src/components` — componentes de interface e layout
 - `src/contexts` — provedor de contexto para estado global
 - `src/lib` — tipos, hooks e constantes reutilizáveis
-- `src/stores` — lógica de armazenamento de itens de feedback
+- `src/stores` — lógica de armazenamento de itens de feedbacks
